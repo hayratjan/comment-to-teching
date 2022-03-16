@@ -1,0 +1,107 @@
+{% extends 'myadmin/base.html' %}
+{% block myadmin_index %} active {% endblock %}
+{% block myadmin_base %}
+    {% load static %}
+    <script src="{% static 'echarts/echarts.js' %}"></script>
+    <br>
+    <div class="row">
+        <div class="">
+            <a class="col-sm-6 col-md-4" href="/myadmin/stu/1">
+                <div class="thumbnail" style="background-color: #14b56f">
+
+                    <div class="caption cenrer">
+                        <h3 class="glyphicon glyphicon-user">&nbsp;学生数量 &nbsp;&emsp;&emsp;&emsp;{{ students }}</h3>
+                        <p style="height: 20px"></p>
+                    </div>
+                </div>
+            </a>
+            <a class="col-sm-6 col-md-4" href="/myadmin/teachers/1">
+                <div class="thumbnail" style="background-color: #FCB41B">
+
+                    <div class="caption cenrer">
+                        <h3 class="glyphicon glyphicon-user">&nbsp;教师数量 &nbsp;&emsp;&emsp;&emsp;{{ teachers }}</h3>
+                        <p style="height: 20px"></p>
+
+                    </div>
+                </div>
+            </a>
+            <a class="col-sm-6 col-md-4" href="/myadmin/kecheng/1">
+                <div class="thumbnail" style="background-color: #B65EC2">
+                    <div class="caption cenrer">
+                        <h3 class="glyphicon glyphicon-user">&nbsp;课程数量 &nbsp;&emsp;&emsp;&emsp;{{ kecheng }}</h3>
+                        <p style="height: 20px"></p>
+                    </div>
+                </div>
+            </a>
+            <a class="col-sm-6 col-md-4" href="/myadmin/tiku/">
+                <div class="thumbnail" style="background-color: #C25E5E">
+                    <div class="caption cenrer">
+                        <h3 class="glyphicon glyphicon-user">&nbsp;评价题数量 &nbsp;&emsp;&emsp;&emsp;{{ tiku }}</h3>
+                        <p style="height: 20px"></p>
+                    </div>
+                </div>
+            </a>
+            <a class="col-sm-6 col-md-4" href="/myadmin/pingjia/">
+                <div class="thumbnail" style="background-color: #5EBBC2">
+                    <div class="caption cenrer">
+                        <h3 class="glyphicon glyphicon-user">&nbsp;评价数量 &nbsp;&emsp;&emsp;{{ pingjia }}</h3>
+                        <p style="height: 20px"></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a class="col-sm-6 col-md-4" href="/myadmin/admin/">
+            <div class="thumbnail"
+                 style=" background-color: #858600">
+                <div class="caption cenrer" >
+                    <h3 ><span class="glyphicon glyphicon-user " ></span>&emsp;管理员 &nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{ admin }}</h3>
+                    <p style="height: 20px"></p>
+                </div>
+            </div>
+        </a>
+        <br>
+        <hr>
+        <div class="col-md-12">
+            <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+            <div class="" id="main" style="width: 380px;height:230px;border: black solid 1px;margin: 20px 0px 10px 0px;padding: 10px 10px 10px 10px;"></div>
+            <script type="text/javascript">
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('main'));
+
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: '教师教学质量评价系统信息'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['数量']
+                    },
+                    xAxis: {
+                        data: ['学生', '教师', '课程', '题', '评价', '管理员']
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            name: '',
+                            type: 'bar',
+                            data: [{{ students }}, {{ teachers }}, {{ kecheng }}, {{ tiku }}, {{ pingjia }}, {{ admin }}]
+                        }
+                    ]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            </script>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}
