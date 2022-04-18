@@ -711,7 +711,7 @@ def myadmin_tiku_del(request, id):
     return render(request, 'myadmin/tishi.html', {"msg": msg})
 
 
-# 评价管理首页
+# 管理员评价成绩查看模块
 def myadmin_pingjia(request):
     from django.db.models import Avg
     teachers_list = Teachers.objects.filter(is_active=True)

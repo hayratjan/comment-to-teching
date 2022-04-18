@@ -1,6 +1,7 @@
 import hashlib
 
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+
 from login.models import *
 
 
@@ -47,21 +48,22 @@ def teacher_index(request):
 
 
 # @check_login
-def teacher_pingjia(request, banji_id):
-    """
+"""
     1.班级过滤器
     2.学生评价了
     3.学生评价平均值
     4.总评价
-from django.db.models import Avg,Max,Min,Count,Sum
+    from django.db.models import Avg,Max,Min,Count,Sum
 
-    """
-    from django.db.models import Avg, Max, Min, Count, Sum
+"""
+
+
+def teacher_pingjia(request, banji_id):
+    from django.db.models import Avg
     teacher_id = request.session['teacher_id']
     pingjiabaio = PingJia.objects.filter(is_active=True,
                                          kecheng__xuehao__banji=banji_id,
                                          kecheng__teacher_id=teacher_id)  # 评价
-
     tiku = TiKu_1.objects.filter(is_active=True)  # 题库
     a = KeCheng.objects.filter(teacher_id=teacher_id, is_active=True) \
         .values('xuehao__banji', 'xuehao', 'id', 'ok')  # 班级过滤器

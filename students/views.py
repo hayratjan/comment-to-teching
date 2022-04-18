@@ -46,8 +46,7 @@ def index(request):
         return render(request, 'students/index.html', locals())
 
 
-# 学生评价页
-# @check_login
+# 学生评功能
 def update_pingjia(request, kecheng_id):
     xuehao = request.session['xuehao']
     try:
@@ -55,7 +54,7 @@ def update_pingjia(request, kecheng_id):
         kecheng = KeCheng.objects.filter(id=str(kecheng_id), is_active=True).values('id', 'kecheng', 'teacher_id__name',
                                                                                     'teacher_id__phone')
         tiku = TiKu_1.objects.filter(is_active=True).order_by('id')
-        book = KeCheng.objects.filter(xuehao=xuehao, is_active=True, ok='no').order_by('id')  #
+        book = KeCheng.objects.filter(xuehao=xuehao, is_active=True, ok='no').order_by('id')
         book1 = KeCheng.objects.filter(xuehao=xuehao, is_active=True, ok='ok')
     except Exception as e:
         print('--update  book error is %s' % (e))
