@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>修改密码页面</title>
-
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
           integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -18,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
 </head>
-{% load static %}
+
 <body background="{% static 'img/img.png' %}" style=" background-repeat:no-repeat ;background-size:100% 100%;
 background-attachment: fixed;">
 
@@ -29,40 +30,43 @@ background-attachment: fixed;">
             <div class="row clearfix">
                 <div class="col-md-4 column">
                 </div>
-                <div class="col-md-4 column" style="border-radius: 30px;background-color: white;padding: 20px 20px 20px 20px;opacity: 0.9">
-                    <div style="text-align: center;margin-bottom: 50px"><h2>修改密码</h2></div>
-                    <form class="form-sigin" action="{% url 'teacher_pswd_update' %}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div style="color: red;font-size: 10pt;">{{ msg }}</div>
-                        <label for="">用户名</label>
-                        <input type="text" class="form-control" name="xuehao" id="inputEmail3" disabled="disabled"
-                               value="{{ request.session.teacher_id }}" placeholder="学号">
+                <div class="col-md-4 column">
+                    <div style="border-radius: 30px;background-color: white;padding: 20px 20px 20px 20px;margin: 1px;opacity: 0.9">
+                        <div style="text-align: center;margin-bottom: 50px"><h2>修改密码</h2></div>
+                        <form class="form-sigin" action="{% url 'teacher_pswd_update' %}" method="post"
+                              enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div style="color: red;font-size: 10pt;">{{ msg }}</div>
+                            <label for="">用户名</label>
+                            <input type="text" class="form-control" name="xuehao" id="inputEmail3" disabled="disabled"
+                                   value="{{ request.session.teacher_id }}" placeholder="学号">
 
-                        <label style="margin-top: 25px">原密码</label>
-                        <input type="password" name="pswd" class="form-control" id="inputPassword3"
-                               placeholder="密码">
+                            <label style="margin-top: 25px">原密码</label>
+                            <input type="password" name="pswd" class="form-control" id="inputPassword3"
+                                   placeholder="密码">
 
-                        <label style="margin-top: 25px">新密码</label>
-                        <input type="password" name="pswd_1" class="form-control" id="inputPassword3"
-                               placeholder="密码">
+                            <label style="margin-top: 25px">新密码</label>
+                            <input type="password" name="pswd_1" class="form-control" id="inputPassword3"
+                                   placeholder="密码">
 
-                        <label style="margin-top: 25px">确认密码</label>
-                        <input type="password" name="pswd_2" class="form-control" id="inputPassword3"
-                               placeholder="密码">
-
-
-                        <div class="checkbox" style="margin-top: 15px">
-                            <label>
-                                <input type="checkbox" name="remember"> 记住我
-                            </label>
-                        </div>
+                            <label style="margin-top: 25px">确认密码</label>
+                            <input type="password" name="pswd_2" class="form-control" id="inputPassword3"
+                                   placeholder="密码">
 
 
-                        <input type="submit" class=" btn btn-primary form-control"
-                               style="margin-bottom: 15px;margin-top: 15px" value="确定">
+                            <div class="checkbox" style="margin-top: 15px">
+                                <label>
+                                    <input type="checkbox" name="remember"> 记住我
+                                </label>
+                            </div>
 
 
-                    </form>
+                            <input type="submit" class=" btn btn-primary form-control"
+                                   style="margin-bottom: 15px;margin-top: 15px" value="确定">
+
+
+                        </form>
+                    </div>
 
 
                 </div>

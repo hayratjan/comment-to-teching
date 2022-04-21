@@ -1,11 +1,14 @@
 <!doctype html>
+{% load static %}
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>后台管理——学生</title>
+    <title>后台管理</title>
 
 
     <!-- Bootstrap -->
@@ -43,17 +46,32 @@ background-attachment: fixed;">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">教师教学质量评价系统的设计与实现 <small style="font-size: small">管理员</small></a>
+            <a class="navbar-brand" style="padding: 3px 0px 3px 3px;margin: 0px">
+                <img alt="Brand" width="45px" height="45px" src="{% static 'img/logo.png' %}">
+            </a>
+            <a class="navbar-brand" style="font-size: 15px">教师教学质量评价系统的设计与实现</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a>欢迎您：{{ request.session.name }}</a></li>
-                <li><a href="{% url 'myadmin_pswd_update' %}">修改密码</a></li>
-                <li><a href="/logout/">退出</a></li>
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">欢迎您：{{ request.session.name }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'myadmin_pswd_update' %}">修改密码</a></li>
+                        <li><a href="/logout/">退出登录</a></li>
+
+                    </ul>
+                </li>
             </ul>
-
-        </div>
+{#        <div id="navbar" class="navbar-collapse collapse">#}
+{#            <ul class="nav navbar-nav navbar-right">#}
+{#                <li><a>欢迎您：{{ request.session.name }}</a></li>#}
+{#                <li><a href="{% url 'myadmin_pswd_update' %}">修改密码</a></li>#}
+{#                <li><a href="/logout/">退出</a></li>#}
+{##}
+{#            </ul>#}
+{##}
+{#        </div>#}
 
     </div>
     </div>
