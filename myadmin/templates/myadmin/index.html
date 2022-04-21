@@ -9,8 +9,17 @@
             <a class="col-sm-6 col-md-4" href="/myadmin/stu/1">
                 <div class="thumbnail" style="background-color: #14b56f">
 
-                    <div class="caption cenrer">
-                        <h3 class="glyphicon glyphicon-user">&nbsp;学生数量 &nbsp;&emsp;&emsp;&emsp;{{ students }}</h3>
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h3 class="glyphicon glyphicon-user">&nbsp;学生数量</h3>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <p>
+                                <h3 class="text-right">{{ students }}</h3></p>
+                            </div>
+                        </div>
+
                         <p style="height: 20px"></p>
                     </div>
                 </div>
@@ -18,8 +27,16 @@
             <a class="col-sm-6 col-md-4" href="/myadmin/teachers/1">
                 <div class="thumbnail" style="background-color: #FCB41B">
 
-                    <div class="caption cenrer">
-                        <h3 class="glyphicon glyphicon-lock">&nbsp;教师数量 &nbsp;&emsp;&emsp;&emsp;{{ teachers }}</h3>
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h3 class="glyphicon glyphicon-lock">&nbsp;教师数量</h3>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <p><h3 class="text-right">{{ teachers }}</h3></p>
+                            </div>
+                        </div>
+
                         <p style="height: 20px"></p>
 
                     </div>
@@ -27,24 +44,47 @@
             </a>
             <a class="col-sm-6 col-md-4" href="/myadmin/kecheng/1">
                 <div class="thumbnail" style="background-color: #B65EC2">
-                    <div class="caption cenrer">
-                        <h3 class="glyphicon glyphicon-book">&nbsp;课程数量 &nbsp;&emsp;&emsp;&emsp;{{ kecheng }}</h3>
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h3 class="glyphicon glyphicon-book">&nbsp;课程数量</h3>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <p ><h3 class="text-right">{{ kecheng }}</h3></p>
+                            </div>
+                        </div>
                         <p style="height: 20px"></p>
                     </div>
                 </div>
             </a>
             <a class="col-sm-6 col-md-4" href="/myadmin/tiku/">
                 <div class="thumbnail" style="background-color: #C25E5E">
-                    <div class="caption cenrer">
-                        <h3 class="glyphicon glyphicon-font">&nbsp;评价题数量 &nbsp;&emsp;&emsp;&emsp;{{ tiku }}</h3>
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h3 class="glyphicon glyphicon-font">&nbsp;评价题数量</h3>
+
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <p>
+                                <h3 class="text-right">{{ tiku }}</h3></p>
+                            </div>
+                        </div>
                         <p style="height: 20px"></p>
                     </div>
                 </div>
             </a>
             <a class="col-sm-6 col-md-4" href="/myadmin/pingjia/">
                 <div class="thumbnail" style="background-color: #5EBBC2">
-                    <div class="caption cenrer">
-                        <h3 class="glyphicon glyphicon-check">&nbsp;评价数量 &nbsp;&emsp;&emsp;{{ pingjia }}</h3>
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h3 class="glyphicon glyphicon-check">&nbsp;评价数量</h3>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <p><h3 class="text-right">{{ pingjia }}</h3></p>
+                            </div>
+                        </div>
                         <p style="height: 20px"></p>
                     </div>
                 </div>
@@ -53,9 +93,16 @@
         <a class="col-sm-6 col-md-4" href="/myadmin/admin/">
             <div class="thumbnail"
                  style=" background-color: #858600">
-                <div class="caption cenrer" >
-                    <h3 ><span class="
-glyphicon glyphicon-cog" ></span>&emsp;管理员 &nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{ admin }}</h3>
+                <div class="caption">
+                    <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h3><span class="glyphicon glyphicon-cog"></span>&emsp;管理员</h3>
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <p>
+                                <h3 class="text-right">{{ admin }}</h3></p>
+                            </div>
+                        </div>
                     <p style="height: 20px"></p>
                 </div>
             </div>
@@ -64,7 +111,8 @@ glyphicon glyphicon-cog" ></span>&emsp;管理员 &nbsp;&emsp;&emsp;&emsp;&emsp;&
         <hr>
         <div class="col-md-12">
             <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
-            <div class="" id="main" style="width: 380px;height:230px;border: black solid 1px;margin: 20px 0px 10px 0px;padding: 10px 10px 10px 10px;"></div>
+            <div class="col-sm-6 col-md-4" id="main"
+                 style=";height:230px;border: black solid 1px;margin: 20px 0px 10px 0px;padding: 10px 10px 10px 10px;"></div>
             <script type="text/javascript">
                 // 基于准备好的dom，初始化echarts实例
                 var myChart = echarts.init(document.getElementById('main'));
