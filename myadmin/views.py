@@ -924,3 +924,61 @@ def pswd_update(request):
         else:
             msg = "原密码错误！"
             return render(request, 'myadmin/pswd_updat.html', {"msg": msg})
+
+
+def myadmin_pingjia_show(request):
+
+    from django.db.models import Avg
+    teacher_id = request.GET.get('id')
+    pingjiabaio = PingJia.objects.filter(is_active=True,
+                                         # kecheng__xuehao__banji=banji_id,
+                                         kecheng__teacher_id=teacher_id)  # 评价
+    tiku = TiKu_1.objects.filter(is_active=True)  # 题库
+    a = KeCheng.objects.filter(teacher_id=teacher_id, is_active=True) \
+        .values('xuehao__banji', 'xuehao', 'id', 'ok')  # 班级过滤器
+    b = KeCheng.objects.filter(teacher_id=teacher_id, is_active=True, )
+
+    # 评价率  评价率 = 学生评价数  /  学生数
+    pingjia_sum = KeCheng.objects.filter(is_active=True, ok='ok').count()  # 学生评价书
+    stu_sum = Students.objects.filter(is_active=True).count()
+    PJL = float('%.2f' % (pingjia_sum / stu_sum * 100))
+
+    # 求平均值
+    avg = PingJia.objects.filter(kecheng__ok='ok',
+                                 kecheng__teacher_id=teacher_id,
+                                 # kecheng__xuehao__banji=banji_id,
+                                 ).aggregate(Avg("s_daan1"),
+                                             Avg("s_daan2"),
+                                             Avg("s_daan3"),
+                                             Avg("s_daan4"),
+                                             Avg("s_daan5"),
+                                             Avg("s_daan6"),
+                                             Avg("s_daan7"),
+                                             Avg("s_daan8"),
+                                             Avg("s_daan9"),
+                                             Avg("s_daan10"))
+    print(avg)
+
+    try:
+        avg1 = float('%.2f' % avg['s_daan1__avg'])
+        avg2 = float('%.2f' % avg['s_daan2__avg'])
+        avg3 = float('%.2f' % avg['s_daan3__avg'])
+        avg4 = float('%.2f' % avg['s_daan4__avg'])
+        avg5 = float('%.2f' % avg['s_daan5__avg'])
+        avg6 = float('%.2f' % avg['s_daan6__avg'])
+        avg7 = float('%.2f' % avg['s_daan7__avg'])
+        avg8 = float('%.2f' % avg['s_daan8__avg'])
+        avg9 = float('%.2f' % avg['s_daan9__avg'])
+        avg10 = float('%.2f' % avg['s_daan10__avg'])
+        # 综合评价
+        s = 0
+        s2 = 0
+        for i in avg:
+            if avg[i] != 0:
+                s += 1
+                s2 += avg[i]
+        s_avg = s2 / s
+        s_avg = float('%.2f' % s_avg)
+    except Exception as e:
+        print('ok')
+    return render(request,'myadmin/pingjia/pingjia_show.html',locals())

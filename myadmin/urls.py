@@ -38,6 +38,7 @@ urlpatterns = [
 
     # —————————————————————评价管理———————————————————————————————————
     path('pingjia/', views.myadmin_pingjia, name='myadmin_pingjia'),  # 评价排行榜
+    path('pingjia_show/', views.myadmin_pingjia_show, name='myadmin_pingjia_show'),  # 查看评价信息
     path('pingjia_pjl/', views.myadmin_pingjia_pjl, name='myadmin_pingjia_pjl'),  # 班级评价率
     path('pingjia_not/', views.myadmin_pingjia_not, name='myadmin_pingjia_not'),  # 未评价
 

@@ -15,6 +15,7 @@
                 <th>手机号</th>
                 <th>学生评价率</th>
                 <th>成绩</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
@@ -26,17 +27,18 @@
 
                     {% for cell in row %}
                         {{ row.extend }}
-                        {% if cell == 'ok' %}
-                            <td><span style="color: darkgreen" class="glyphicon glyphicon-ok"></span></td>
-                        {% elif cell == 'no' %}
-                            <td><span style="color: red" class="glyphicon glyphicon-remove"></span></td>
-                        {% else %}
+
                             <td>{{ cell }}</td>
-                        {% endif %}
+
 
 
                     {% endfor %}
+                    <td>
+
+                        <a class="btn-sm btn-primary" href="{% url 'myadmin_pingjia_show'%}?id={{ row | first }}">查看</a>
+                    </td>
                 </tr>
+
             {% endfor %}
 
 
