@@ -27,13 +27,34 @@
         .footer {
             background-color: #333;
         }
+
+        .sidebar {
+            position: fixed;
+            top: 51px;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+            background-color: #f5f5f5;
+            border-right: 1px solid #eee;
+        }
+
+        .main {
+            margin: 0px;
+            background-color: white;
+            padding: 0px 1px 0px 10px;
+            margin-bottom: 60px;
+
+        }
     </style>
-    {#    {% load static %}#}
-    {#    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">#}
 </head>
-{% load static %}
-<body background="{% static 'img/img.png' %}" style=" background-repeat:no-repeat ;background-size:100% 100%;
-background-attachment: fixed;">
+<body
+        {#        background="{% static 'img/img.png' %}" #}
+        {#        style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;"#}
+>
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -80,10 +101,10 @@ background-attachment: fixed;">
 </nav>
 
 
-<div class="col-sm-2 col-md-2 sidebar">
-    <div class="list-group " style="font-size: 13pt;margin-top: 105px">
+<div class="col-xs-2 col-md-2 sidebar">
+    <div class="list-group" style="font-size: 13pt;padding: 0px;margin: 0px">
         <a class="list-group-item glyphicon glyphicon-home {% block myadmin_index %}{% endblock %}"
-           href="/myadmin/"><b>&nbsp;首页</b></a>
+           href="/myadmin/" style="margin: 0px;"><b>&nbsp;首页</b></a>
 
 
         <a class="list-group-item glyphicon glyphicon-user {% block myadmin_stu %}{% endblock %} "
@@ -135,17 +156,14 @@ background-attachment: fixed;">
 
 
 </div>
-<div class="container-fluid" style="margin-top: 70px">
+<div class="container-fluid" style="margin-top: 50px;">
     <div class="row">
-        <div class="col-sm-10">
+        <div class="col-md-2 col-xs-2"></div>
+        <div class="col-md-10 col-xs-10 ">
+            <div class="row main">
+                {% block myadmin_base %}
 
-            <div style="background-color: white;border-radius: 10px;opacity: 0.9;margin: 0px 0px 60px 0px;
-                 padding: 0px 20px 20px 20px">
-                <div class="row" style="padding: 0px 15px 15px 15px">
-                    {% block myadmin_base %}
-
-                    {% endblock %}
-                </div>
+                {% endblock %}
             </div>
         </div>
     </div>

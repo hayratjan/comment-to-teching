@@ -115,7 +115,7 @@
         </div>
         <div class="col-sm-6 col-md-4"
              style="height: 230px;">
-            <div style="border: black solid 1px;height: 230px" id="main">
+            <div style="border: black solid 1px;height: 230px" id="root">
 
             </div>
 
@@ -128,7 +128,7 @@
     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+        var myChart = echarts.init(document.getElementById('root'));
 
         // 指定图表的配置项和数据
         var option = {
