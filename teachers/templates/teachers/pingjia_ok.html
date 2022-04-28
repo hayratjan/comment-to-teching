@@ -19,14 +19,31 @@
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 51px;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 20px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #f5f5f5;
+            border-right: 1px solid #eee;
+        }
+    </style>
 </head>
 
-<body background="{% static 'img/img.png' %}" style=" background-repeat:no-repeat ;background-size:100% 100%;
-background-attachment: fixed;">
+<body
+        {#        background="{% static 'img/img.png' %}" style=" background-repeat:no-repeat ;background-size:100% 100%;#}
+        {#background-attachment: fixed;"#}
+>
 
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -58,21 +75,24 @@ background-attachment: fixed;">
 </nav>
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="row clearfix">
-        <div class="col-xs-12 col-md-12 column" style="margin-top: 80px;align-content: center">
-            <div class="row clearfix">
-                <div class="col-xs-12 col-md-3 column">
+        <div class="col-xs-12 col-md-12 column" style="margin-top: 50px;padding: 0px">
+            <div class="row clearfix" style="margin: 0px">
+                <div class="col-xs-4 col-md-3 sidebar" style="padding: 0px">
 
 
-                    <div class="list-group" style="font-size: 12pt">
-                        <div style="padding: 10px 10px 10px 10px">
-                            <a class="list-group-item active"><b>授课班级</b></a>
+                    <div class="list-group " style="font-size: 12pt;padding: 0px;">
+                        <div>
+                            <a class="list-group-item" style="border-radius: 0px;border: #8c909a solid 1px;background-color: white;color: black;font-size: 14pt  "><b>授课班级</b></a>
                             {% regroup a by xuehao__banji as country_list %}
                             {% for s in country_list %}
 
-                                <a class="list-group-item" href="/teachers/teacher_pingjia/{{ s.grouper }}"
-                                   target="leftnav">{{ s.grouper }}</a>
+                                <a class="list-group-item  {% if banji_id == s.grouper %}
+                                active
+                                {% endif %} " href="/teachers/teacher_pingjia/{{ s.grouper }}"
+                                   target="leftnav"
+                                   style="border-radius: 0px;border: #8c909a solid 1px;">{{ s.grouper }}</a>
 
                             {% endfor %}
                         </div>
@@ -81,10 +101,16 @@ background-attachment: fixed;">
 
                 </div>
 
-                <div class="col-xs-12 col-md-9 column">
-                    <div style="opacity: 0.8;padding: 30px 30px 30px 30px;background-color: white;border-radius: 20px;margin: 1px 1px 30px 1px">
+                <div class="col-xs-8 col-md-9 col-xs-offset-4 col-md-offset-3 column">
+                    <div style="opacity: 0.8;background-color: white;border-radius: 20px;margin-top: 20px;margin-bottom: 60px">
+
+                        <div class="bg-primary" style="padding: 10px;border-radius: 10px;margin-bottom: 10px">
+                            <p>班级：{{ banji_id }}</p>
+                            <p>学生数量：{{ stu_sum }}</p>
+                            <p>完成评价学生数量：{{ pingjia_sum }}</p>
+                        </div>
                         <label for="" style="color: red">学生评价率：</label>
-                        <div class="progress" style="margin-bottom: 30px">
+                        <div class="progress" style="">
 
                             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0"
                                  aria-valuemin="0"
@@ -131,7 +157,7 @@ background-attachment: fixed;">
                         {% load static %}
                         <script src="{% static 'echarts/echarts.js' %}"></script>
                         <div class="" id="main"
-                             style="height:300px;border: black solid 1px;margin: 20px 0px 10px 0px;padding: 10px 10px 10px 10px;"></div>
+                             style="height: 330px;border: black solid 1px;margin: 20px 0px 10px 0px;padding: 10px 10px 10px 10px;"></div>
                         <script type="text/javascript">
                             // 基于准备好的dom，初始化echarts实例
                             var myChart = echarts.init(document.getElementById('main'));

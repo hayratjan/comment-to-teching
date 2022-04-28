@@ -30,12 +30,12 @@
 
         .sidebar {
             position: fixed;
-            top: 51px;
+            top: 50px;
             bottom: 0;
             left: 0;
             z-index: 1000;
             display: block;
-            padding: 20px;
+            padding: 0px;
             overflow-x: hidden;
             overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
             background-color: #f5f5f5;
@@ -43,12 +43,23 @@
         }
 
         .main {
-            margin: 0px;
+            margin: 0px 0px 40px 0px;
             background-color: white;
-            padding: 0px 1px 0px 10px;
-            margin-bottom: 60px;
+            padding: 0px 1px 0px 0px;
+
 
         }
+
+        .list-group-item {
+
+            margin: 0px;
+            border-radius: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
     </style>
 </head>
 <body
@@ -101,10 +112,10 @@
 </nav>
 
 
-<div class="col-xs-2 col-md-2 sidebar">
+<div class="col-xs-4 col-md-2 sidebar">
     <div class="list-group" style="font-size: 13pt;padding: 0px;margin: 0px">
         <a class="list-group-item glyphicon glyphicon-home {% block myadmin_index %}{% endblock %}"
-           href="/myadmin/" style="margin: 0px;"><b>&nbsp;首页</b></a>
+           href="/myadmin/" style="border-radius: 0px"><b>&nbsp;首页</b></a>
 
 
         <a class="list-group-item glyphicon glyphicon-user {% block myadmin_stu %}{% endblock %} "
@@ -150,17 +161,17 @@
 
         <a class="list-group-item glyphicon glyphicon-cog {% block myadmin_admin %}{% endblock %}"
            href="{% url 'myadmin_admin' %}"
-           target="leftnav">&nbsp;管理员</a>
+           target="leftnav" style="border-radius: 0px">&nbsp;管理员</a>
 
     </div>
 
 
 </div>
-<div class="container-fluid" style="margin-top: 50px;">
+<div class="container-fluid" style="margin-top: 50px;background-color: white">
     <div class="row">
-        <div class="col-md-2 col-xs-2"></div>
-        <div class="col-md-10 col-xs-10 ">
-            <div class="row main">
+{#        <div class="col-md-2 col-xs-4"></div>#}
+        <div class="col-md-10 col-xs-8 col-md-offset-2 col-xs-offset-4" style="background-color: white">
+            <div class="row main" style="">
                 {% block myadmin_base %}
 
                 {% endblock %}
