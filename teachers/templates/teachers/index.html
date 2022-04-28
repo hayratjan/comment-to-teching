@@ -69,13 +69,13 @@ background-attachment: fixed;">
 
                 <div class="col-sm-8 col-md-10 column"
                 >
-                    <div style="font-size: 15pt;margin-top:20px;background-color: white;opacity: 0.8;padding: 30px 30px 30px 30px;border-radius: 20px;">
+                    <div style="font-size: 15pt;margin-top:20px;background-color: white;opacity: 0.8;padding: 30px;border-radius: 10px;">
                         <ul class="nav nav-pills nav-stacked">
                             <div class="list-group">
                                 <a class="list-group-item active">&emsp;授课班级</a>
                                 {% regroup a by xuehao__banji as country_list %}
                                 {% for s in country_list %}
-                                    <a style="background-color: #ebecef;margin-top: 5px;font-size: 13pt"
+                                    <a style="background-color: #ebecef;margin-top: 1px;font-size: 13pt"
                                        class="list-group-item"
                                        href="/teachers/teacher_pingjia/{{ s.grouper }}"
                                        target="leftnav">&emsp;{{ forloop.counter }}.{{ s.grouper }}</a>
