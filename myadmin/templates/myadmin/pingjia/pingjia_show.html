@@ -6,7 +6,11 @@
     <h2 class="glyphicon glyphicon-stats">&nbsp;查看教师评价成绩</h2>
     <div style="opacity: 0.8;padding: 0px;background-color: white;margin: 1px 1px 30px 1px">
         <div class="bg-primary" style="padding: 10px;border-radius: 10px;margin-bottom: 10px">
-            <p>班级：{{ banji_id }}</p>
+            <p>教工号：{{ teacher_id }}</p>
+            <p>教师名字：{{ teacher.name }}</p>
+            <p>教师手机号：{{ teacher.phone }}</p>
+            <p>教师邮箱：{{ teacher.email }}</p>
+            <p>教师图片：{{ teacher.photo }}</p>
             <p>学生数量：{{ stu_sum }}</p>
             <p>完成评价学生数量：{{ pingjia_sum }}</p>
         </div>

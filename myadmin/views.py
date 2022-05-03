@@ -930,6 +930,7 @@ def myadmin_pingjia_show(request):
 
     from django.db.models import Avg
     teacher_id = request.GET.get('id')
+    teacher=Teachers.objects.get(teacher_id=teacher_id)
     pingjiabaio = PingJia.objects.filter(is_active=True,
                                          # kecheng__xuehao__banji=banji_id,
                                          kecheng__teacher_id=teacher_id)  # 评价
