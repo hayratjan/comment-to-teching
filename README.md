@@ -18,9 +18,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=hayratjan&show_icons=true&theme=Gradient)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
-![](https://img.shields.io/badge/python-3.10-orange?style=for-the-badge&logo=python&logoColor=orange)
 
 开心的每一天！
 
@@ -52,12 +49,13 @@ Here are some ideas to get you started:
 
 
 
-##### 关于系统
+#### 关于系统
 
-- django4
-- mysql
+- Django4.0
+- MySQL8.0
 - excel批量上传
-- bootstrap3
+- bootstrap3框架
+- echarts库
 
 
 
@@ -76,6 +74,7 @@ Here are some ideas to get you started:
 - django
 - openpyxl
 - pillow
+- django-simpleui
 
 
 
