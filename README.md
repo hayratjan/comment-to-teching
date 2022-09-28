@@ -1,8 +1,7 @@
 # 教师评价系统
-毕业设计2022年5月
+ **毕业设计2022年5月** 
 
-#### 介绍
-### hello GitHub 👋
+
 
 <!--
 **hayratjan/hayratjan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -25,13 +24,35 @@ Here are some ideas to get you started:
 
 开心的每一天！
 
+## 角色功能说明
 
-- 管理员
-- 教师
-- 学生
+#### 管理员
 
 
-#### 软件架构
+1. 管理学生
+1. 管理教师
+1. 管理课程
+1. 管理选课
+1. 管理评价题
+1. 查看成绩
+1. excel批量上传
+1. 修改密码
+
+#### 学生
+
+- 评价教师
+- 查看评价成绩
+- 修改密码
+
+
+#### 教师
+
+- 查看评价
+- 修改密码
+
+
+
+##### 关于系统
 
 - django4
 - mysql
@@ -40,31 +61,24 @@ Here are some ideas to get you started:
 
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 演示图片
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185445.jpg)
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185740.jpg)
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185839.jpg)
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185839.jpg)
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20190035.jpg)
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20190128.jpg)
+![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20190153.jpg)
 
-#### 使用说明
+### pip包
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+- django
+- openpyxl
+- pillow
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+
+
