@@ -1,6 +1,8 @@
 # 教师评价系统
  **毕业设计2022年5月** 
-
+## 相关技术
+  ![Python](https://img.shields.io/badge/python-3.10-orange?style=for-the-badge&logo=python&logoColor=orange)
+  ![Django](https://img.shields.io/badge/django-4.0-blue?style=for-the-badge&logo=django&logoColor=blue)
 
 
 <!--
