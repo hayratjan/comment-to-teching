@@ -1,9 +1,9 @@
-# 教师评价系统
+# 教师评价系统 😄
  **毕业设计2022年5月** 
 ## 相关技术
   ![Python](https://img.shields.io/badge/python-3.10-orange?style=for-the-badge&logo=python&logoColor=orange)
   ![Django](https://img.shields.io/badge/django-4.0-blue?style=for-the-badge&logo=django&logoColor=blue)
-
+  ![Bootstrap](https://img.shields.io/badge/Bootstrap-3.0-blueviolet?style=for-the-badge&logo=Bootstrap&logoColor=blueviolet)
 
 <!--
 **hayratjan/hayratjan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
