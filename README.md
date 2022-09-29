@@ -1,6 +1,6 @@
 # 教师评价系统 😄
  **毕业设计2022年5月** 
-## 相关技术
+## 相关技术🍳
   ![Python](https://img.shields.io/badge/python-3.10-orange?style=for-the-badge&logo=python&logoColor=orange)
   ![Django](https://img.shields.io/badge/django-4.0-blue?style=for-the-badge&logo=django&logoColor=blue)
   ![Bootstrap](https://img.shields.io/badge/Bootstrap-3.0-blueviolet?style=for-the-badge&logo=Bootstrap&logoColor=blueviolet)
@@ -21,11 +21,11 @@ Here are some ideas to get you started:
 -->
 
 
-开心的每一天！
+开心的每一天！😁
 
-## 角色功能说明
+## 角色功能说明🍳
 
-#### 管理员
+#### 管理员👨🏽‍💻
 
 
 1. 管理学生
@@ -37,21 +37,21 @@ Here are some ideas to get you started:
 1. excel批量上传
 1. 修改密码
 
-#### 学生
+#### 学生👨🏽‍🎓
 
 - 评价教师
 - 查看评价成绩
 - 修改密码
 
 
-#### 教师
+#### 教师🧑🏽‍🏫
 
 - 查看评价
 - 修改密码
 
 
 
-#### 关于系统
+#### 关于系统🥯
 
 - Django4.0
 - MySQL8.0
@@ -62,7 +62,7 @@ Here are some ideas to get you started:
 
 
 
-#### 演示图片
+#### 演示图片🍔
 ![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185445.jpg)
 ![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185740.jpg)
 ![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20185839.jpg)
@@ -71,7 +71,7 @@ Here are some ideas to get you started:
 ![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20190128.jpg)
 ![输入图片说明](%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87%20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-28%20190153.jpg)
 
-### pip包
+### pip包🅿️
 
 - django
 - openpyxl
